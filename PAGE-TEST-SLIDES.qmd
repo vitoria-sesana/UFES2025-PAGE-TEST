@@ -1,18 +1,72 @@
 ---
-title: "Page"
+title: "Teste de Page para k amostras relacionadas"
+author: "Vitória Nascimento de Jesus Sesana"
 format: revealjs
 editor: visual
 ---
 
-## 
+## Sumário
+
+- Sobre o teste
+- Metodologia do teste
+- Aplicação prática com dados reais
 
 
-# Sobre o teste
+# Sobre o teste de page
 
-História
-Objetivo
-Hipóteses
-Estatística
+## História
+
+## Objetivo
+
+Ao contrário do teste friedman para k-amostras relacionadas, o teste de page considera a ordinalidade dos dados para cada bloco.
+
+# Metodologia
+
+## Hipóteses
+
+## Passo a passo
+
+## Estatística
+
+## Decisão
 
 # Aplicação
 
+## Contexto 
+
+
+## Sobre os dados
+
+Foi aplicado um questionário para coletar a ordem de preferência de alguns dos pratos principais não vegetarianos ofertados no **Restaurante Universitário** da *Universidade Federal do Espírito Santo*.
+
+Os pratos escolhidos foram: frango grelhado, peixe desfiado, carne moída, nuggets e cozido misto.
+
+## Hipóteses
+
+
+
+## Análise exploratória dos dados
+
+
+
+## Aplicação do no R teste
+
+No pacote *DescTools*, há uma função para executar o teste de page
+
+```{r, eval=FALSE}
+library(DescTools)
+?PageTest()
+```
+
+## Resultados
+
+
+## Referências
+
+Page, E. (1963): Ordered hypotheses for multiple treatments: A significance test for linear ranks. Journal of the American Statistical Association, 58, 216-230.
+
+Siegel, S. & Castellan, N. J. Jr. (1988): Nonparametric statistics for the behavioral sciences. Boston, MA: McGraw-Hill.
+
+Wellek, S. (1989): Computing exact p-values in Page's nonparametric test against trend. Biometrie und Informatik in Medizin und Biologie 20, 163-170
+
+# Agradeço pela atenção!
