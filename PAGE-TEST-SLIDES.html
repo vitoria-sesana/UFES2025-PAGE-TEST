@@ -10,8 +10,8 @@
 <link href="PAGE-TEST-SLIDES_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="author" content="Vitória Nascimento de Jesus Sesana">
-  <title>Teste de Page para k amostras relacionadas</title>
+  <meta name="author" content="Vitória Sesana">
+  <title>Teste de Page para k-amostras relacionadas</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="PAGE-TEST-SLIDES_files/libs/revealjs/dist/theme/quarto.css">
   <link href="PAGE-TEST-SLIDES_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -326,12 +391,12 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Teste de Page para k amostras relacionadas</h1>
+  <h1 class="title">Teste de Page para k-amostras relacionadas</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Vitória Nascimento de Jesus Sesana 
+Vitória Sesana 
 </div>
 </div>
 </div>
@@ -339,11 +404,11 @@ Vitória Nascimento de Jesus Sesana
 </section>
 <section id="sumário" class="slide level2">
 <h2>Sumário</h2>
-<ul>
+<ol type="1">
 <li>Sobre o teste</li>
 <li>Metodologia do teste</li>
 <li>Aplicação prática com dados reais</li>
-</ul>
+</ol>
 </section>
 <section>
 <section id="sobre-o-teste-de-page" class="title-slide slide level1 center">
@@ -352,59 +417,341 @@ Vitória Nascimento de Jesus Sesana
 </section>
 <section id="história" class="slide level2">
 <h2>História</h2>
-</section>
-<section id="objetivo" class="slide level2">
-<h2>Objetivo</h2>
+<p>A história do <strong>Teste de Page</strong> tem origem no contexto dos testes não paramétricos desenvolvidos no século XX, e está associada ao psicológo e estatístico americano <u>Ellis Batten Page</u>, que propôs o teste em 1963<sup>1</sup>.</p>
+<p>Elliot Page estava interessado em métodos eficientes para analisar dados classificados (rankings), especialmente quando havia uma hipótese de <strong>ordem específica entre tratamentos</strong>.</p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Page, E. B. (1963). “Ordered hypotheses for multiple treatments: a significance test for linear ranks.” Journal of the American Statistical Association, 58(301), 216–230.</p></li></ol></aside></section>
+<section id="page-x-friedman" class="slide level2">
+<h2>Page x Friedman</h2>
 <p>Ao contrário do teste friedman para k-amostras relacionadas, o teste de page considera a ordinalidade dos dados para cada bloco.</p>
+<p>Ou seja, ele é uma extensão do teste de Friedman, mas com uma hipótese alternativa ordenada, do tipo:</p>
+<p><span class="math display">\[ \text{Tratamento 1} \leq \text{Tratamento 2} \leq \dots \leq \text{Tratamento k}
+\]</span></p>
+<blockquote>
+<p>O teste de Page para alternativas ordenadas é ligeiramente mais poderoso que a análise de variância de Friedman por postos.</p>
+</blockquote>
+</section>
+<section id="quando-usar" class="slide level2">
+<h2>Quando usar?</h2>
+<ul>
+<li><p>Dados pareados ou em blocos.</p></li>
+<li><p>As medições podem ser ordenadas (ordinais).</p></li>
+<li><p>Quer verificar se existe uma tendência de ordenação entre os tratamentos.</p></li>
+</ul>
 </section></section>
 <section>
 <section id="metodologia" class="title-slide slide level1 center">
 <h1>Metodologia</h1>
 
 </section>
-<section id="hipóteses" class="slide level2">
-<h2>Hipóteses</h2>
+<section id="dados" class="slide level2">
+<h2>Dados</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 14%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bloco</th>
+<th>Tratamento 1</th>
+<th>Tratamento 2</th>
+<th><span class="math inline">\(\cdots\)</span></th>
+<th>Tratamento <span class="math inline">\(k\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bloco 1</td>
+<td><span class="math inline">\(X_{1,1}\)</span></td>
+<td><span class="math inline">\(X_{1,2}\)</span></td>
+<td><span class="math inline">\(\cdots\)</span></td>
+<td><span class="math inline">\(X_{1,k}\)</span></td>
+</tr>
+<tr class="even">
+<td>Bloco 2</td>
+<td><span class="math inline">\(X_{2,1}\)</span></td>
+<td><span class="math inline">\(X_{2,2}\)</span></td>
+<td><span class="math inline">\(\cdots\)</span></td>
+<td><span class="math inline">\(X_{2,k}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Bloco 3</td>
+<td><span class="math inline">\(X_{3,1}\)</span></td>
+<td><span class="math inline">\(X_{3,2}\)</span></td>
+<td><span class="math inline">\(\cdots\)</span></td>
+<td><span class="math inline">\(X_{3,k}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\ddots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="odd">
+<td>Bloco <span class="math inline">\(b\)</span></td>
+<td><span class="math inline">\(X_{b,1}\)</span></td>
+<td><span class="math inline">\(X_{b,2}\)</span></td>
+<td><span class="math inline">\(\cdots\)</span></td>
+<td><span class="math inline">\(X_{b,k}\)</span></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Matriz com b blocos (linhas) e k tratamentos (colunas).</p>
+</blockquote>
 </section>
 <section id="passo-a-passo" class="slide level2">
-<h2>Passo a passo</h2>
+<h2>Passo a passo <sup>1</sup></h2>
+<p>Passo a passo para a aplicação do teste:</p>
+<ol type="1">
+<li>Obter a matriz de dados (blocos × grupo);</li>
+<li>Rankear os dados dentro de cada linha;</li>
+<li>Definir pesos conforme a ordem esperada;</li>
+<li>Determinar o nível de confiança;</li>
+<li>Calcular a estatística do teste;</li>
+<li>Comparar com valor crítico ou usar aproximação normal para obter p-valor.</li>
+</ol>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Código doi: 10.1080/01621459.1963.10500843</p></li></ol></aside></section>
+<section id="hipóteses" class="slide level2">
+<h2>Hipóteses</h2>
+<p><span class="math display">\[
+\begin{cases}
+H_0: \text{Não há tendência de ordenação entre os tratamentos} \\
+H_1: \text{Existe uma tendência de ordenação específica entre os tratamentos}
+\end{cases}
+\]</span></p>
+<p>Se você suspeita de uma tendência crescente <span class="math inline">\(T_{1} &lt; \dots &lt; T_{k}\)</span>, então os pesos são:</p>
+<p><span class="math display">\[w = \{1,\dots,k\}\]</span></p>
+<p>E então suas hipóteses serão:</p>
+<p><span class="math display">\[
+\begin{cases}
+H_0: \text{Não há tendência de ordenação entre os tratamentos} \\
+H_1: T_{1} &lt; \dots &lt; T_{k}
+\end{cases}
+\]</span></p>
 </section>
-<section id="estatística" class="slide level2">
-<h2>Estatística</h2>
-</section>
+<section id="estatística-do-teste" class="slide level2">
+<h2>Estatística do teste</h2>
+<p><span class="math display">\[ L = \sum{}_{j=1}^{k}w_{j}R_{j}\]</span></p>
+<ul>
+<li><p><span class="math inline">\(w_{j}\)</span> = peso esperado do tratamento j;</p></li>
+<li><p><span class="math inline">\(R_{j}\)</span> = soma dos ranks do tratamento.<sup>1</sup></p></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn3"><p><span class="math inline">\(R_{j} =  \sum{}_{i=1}^{b}X_{ij}\)</span> com <span class="math inline">\(i = {1,\dots,b}\)</span> e <span class="math inline">\(j = {1,\dots,k}\)</span> </p></li></ol></aside></section>
 <section id="decisão" class="slide level2">
 <h2>Decisão</h2>
+<p>Você compara o valor de L com valores críticos em uma tabela de Page (existe para pequenos valores de n e k), ou para maiores valores usa-se a aproximação normal:</p>
+<p><span class="math display">\[
+\mu_L = \frac{n k (k+1)}{2}
+\]</span></p>
+<p><span class="math display">\[
+\sigma_L^2 = \frac{n k (k+1)(2k+1)}{12}
+\]</span></p>
+<p><span class="math display">\[
+Z = \frac{L - \mu_L}{\sigma_L}
+\]</span></p>
+</section>
+<section id="aplicação-no-r" class="slide level2">
+<h2>Aplicação no R</h2>
+<p>No pacote <a href="https://cran.r-project.org/web/packages/DescTools/DescTools.pdf">DescTools</a>, há a seguinte função para executar o teste de page:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(DescTools)</span>
+<span id="cb1-2"><a href=""></a><span class="fu">PageTest</span>(dados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Executa o Teste de Page para alternativas ordenadas usando um algoritmo exato proposto por Stefan Wellek (1989) com dados em blocos não replicáveis</p>
+</section>
+<section id="função-pagetest" class="slide level2">
+<h2>Função PageTest()</h2>
+<ul>
+<li><p>A alternativa implementada é que o parâmetro de localização será crescente ao longo dos grupos. Se a direção oposta for necessária, a ordem dos grupos deve ser invertida dentro da matriz.</p></li>
+<li><p>Os grupos e blocos são obtidos a partir dos índices das colunas e das linhas, respectivamente.</p></li>
+<li><p>Valores NA não são permitidos nos grupos ou blocos; se y contiver NA, os blocos correspondentes serão removidos.</p></li>
+<li><p>Para valores pequenos de k (métodos) ou N (objetos de dados), o PageTest calculará os valores-p exatos. Para k, N &gt; 15, Inf, é retornada uma aproximação normal. Apenas um desses valores será retornado.</p></li>
+</ul>
 </section></section>
 <section>
 <section id="aplicação" class="title-slide slide level1 center">
 <h1>Aplicação</h1>
 
 </section>
-<section id="contexto" class="slide level2">
-<h2>Contexto</h2>
-</section>
 <section id="sobre-os-dados" class="slide level2">
 <h2>Sobre os dados</h2>
 <p>Foi aplicado um questionário para coletar a ordem de preferência de alguns dos pratos principais não vegetarianos ofertados no <strong>Restaurante Universitário</strong> da <em>Universidade Federal do Espírito Santo</em>.</p>
 <p>Os pratos escolhidos foram: frango grelhado, peixe desfiado, carne moída, nuggets e cozido misto.</p>
+<p>O objetivo é verificar se as preferências dos estudantes seguem a seguinte ordem:</p>
+<p><span class="math display">\[ \text{Carne moída} &lt;  \text{Cozido misto} &lt;  \text{Frango grelhado} \\
+\quad\;\;\; &lt; \text{Peixe desfiado} &lt; \text{Nuggets}\]</span></p>
 </section>
+<section id="questionário" class="slide level2">
+<h2>Questionário</h2>
+<ol type="1">
+<li>Você se considera vegano/vegetariano?
+<ul>
+<li>Sim/Não</li>
+</ul></li>
+<li>Quantas vezes por seman, em média, você frequenta o RU?
+<ul>
+<li>Nenhuma vez por semana;</li>
+<li>Raramente (1 vez por semana);</li>
+<li>Regularmente (2 a 5 vezes por semana);</li>
+<li>Frequentemente (6 a 10 vezes).</li>
+</ul></li>
+<li>Ranqueamento das opções de prato principal.</li>
+</ol>
+</section>
+<section id="ranqueamento" class="slide level2">
+<h2>Ranqueamento</h2>
+
+<img data-src="imagens/questionario.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
 <section id="hipóteses-1" class="slide level2">
 <h2>Hipóteses</h2>
+<span class="math display">\[\begin{cases}
+H_0: \text{Não há tendência de ordenação entre os tratamentos} \\
+H_1: \text{Carne moída} &lt;  \text{Cozido misto} &lt;  \text{Frango grelhado} \\
+\quad\;\;\; &lt; \text{Peixe desfiado} &lt; \text{Nuggets}
+\end{cases}\]</span>
+<p>Com os pesos sendo:</p>
+<p><span class="math display">\[w = \{1,2,3,4,5\}\]</span></p>
+<p>E o nível de signficância adotado:</p>
+<p><span class="math display">\[\alpha = 5\%\]</span></p>
 </section>
 <section id="análise-exploratória-dos-dados" class="slide level2">
 <h2>Análise exploratória dos dados</h2>
+<ul>
+<li><p>Quantidade total de estudantes: 30</p></li>
+<li><p>Quantidade de vegetarianos/veganos:</p></li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Vegetariano/Vegano</th>
+<th>Quantidade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sim</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Não</td>
+<td>30</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="aplicação-do-no-r-teste" class="slide level2">
-<h2>Aplicação do no R teste</h2>
-<p>No pacote <em>DescTools</em>, há uma função para executar o teste de page</p>
+<section id="análise-exploratória-dos-dados-1" class="slide level2">
+<h2>Análise exploratória dos dados</h2>
+<ul>
+<li>Gráfico de barras das frequências semanais de idas ao RU:</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="PAGE-TEST-SLIDES_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" style="width:75.0%;height:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="resultados" class="slide level2">
-<h2>Resultados</h2>
+<section id="análise-exploratória-dos-dados-2" class="slide level2">
+<h2>Análise exploratória dos dados</h2>
+<ul>
+<li>Percentual dos ranqueamentos por opção de prato principal:</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="PAGE-TEST-SLIDES_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" style="width:90.0%;height:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="aplicação-do-teste-de-page" class="slide level2">
+<h2>Aplicação do teste de page</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>rankings <span class="ot">&lt;-</span> </span>
+<span id="cb2-2"><a href=""></a>  base <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href=""></a>  <span class="fu">select</span>(</span>
+<span id="cb2-4"><a href=""></a>    carne_moida, </span>
+<span id="cb2-5"><a href=""></a>    cozido_misto,</span>
+<span id="cb2-6"><a href=""></a>    frango_grelhado, </span>
+<span id="cb2-7"><a href=""></a>    peixe_desfiado,</span>
+<span id="cb2-8"><a href=""></a>    nuggets,</span>
+<span id="cb2-9"><a href=""></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-10"><a href=""></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb2-11"><a href=""></a></span>
+<span id="cb2-12"><a href=""></a><span class="fu">head</span>(rankings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     carne_moida cozido_misto frango_grelhado peixe_desfiado nuggets
+[1,]           3            1               4              2       5
+[2,]           3            1               2              4       5
+[3,]           4            2               3              1       5
+[4,]           3            2               5              1       4
+[5,]           4            3               2              1       5
+[6,]           2            4               1              3       5</code></pre>
+</div>
+</div>
+</section>
+<section id="aplicação-do-teste-de-page-1" class="slide level2">
+<h2>Aplicação do teste de page</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">library</span>(DescTools)</span>
+<span id="cb4-2"><a href=""></a><span class="fu">PageTest</span>(rankings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Page test for ordered alternatives
+
+data:  rankings
+L = 1325, p-value = 0.8235</code></pre>
+</div>
+</div>
+</section>
+<section id="cenário-2" class="slide level2">
+<h2>Cenário 2</h2>
+<p>Apenas indivíduos que vão frequentemente ao RU (6 a 10 vezes por semana).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>rankings_2 <span class="ot">&lt;-</span> </span>
+<span id="cb6-2"><a href=""></a>  base <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href=""></a>  <span class="fu">filter</span>(</span>
+<span id="cb6-4"><a href=""></a>    frequencia_ru <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Frequentemente"</span>)</span>
+<span id="cb6-5"><a href=""></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-6"><a href=""></a>  <span class="fu">select</span>(</span>
+<span id="cb6-7"><a href=""></a>    carne_moida, </span>
+<span id="cb6-8"><a href=""></a>    cozido_misto,</span>
+<span id="cb6-9"><a href=""></a>    frango_grelhado, </span>
+<span id="cb6-10"><a href=""></a>    peixe_desfiado,</span>
+<span id="cb6-11"><a href=""></a>    nuggets,</span>
+<span id="cb6-12"><a href=""></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-13"><a href=""></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb6-14"><a href=""></a></span>
+<span id="cb6-15"><a href=""></a><span class="fu">PageTest</span>(rankings_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Page test for ordered alternatives
+
+data:  rankings_2
+L = 479, p-value = 0.8384</code></pre>
+</div>
+</div>
 </section>
 <section id="referências" class="slide level2">
 <h2>Referências</h2>
 <p>Page, E. (1963): Ordered hypotheses for multiple treatments: A significance test for linear ranks. Journal of the American Statistical Association, 58, 216-230.</p>
 <p>Siegel, S. &amp; Castellan, N. J. Jr.&nbsp;(1988): Nonparametric statistics for the behavioral sciences. Boston, MA: McGraw-Hill.</p>
 <p>Wellek, S. (1989): Computing exact p-values in Page’s nonparametric test against trend. Biometrie und Informatik in Medizin und Biologie 20, 163-170</p>
+<p><a href="https://cran.r-project.org/web/packages/DescTools/DescTools.pdf">https://cran.r-project.org/web/packages/DescTools/DescTools.pdf</a></p>
 </section></section>
 <section id="agradeço-pela-atenção" class="title-slide slide level1 center">
 <h1>Agradeço pela atenção!</h1>
@@ -414,6 +761,8 @@ Vitória Nascimento de Jesus Sesana
 </div>
 </div>
 </section>
+
+
     </div>
   </div>
 
@@ -590,9 +939,9 @@ Vitória Nascimento de Jesus Sesana
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
