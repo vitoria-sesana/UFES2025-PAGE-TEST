@@ -1,17 +1,86 @@
-// custom.scss
+/*-- scss:defaults --*/
+// https://quarto.org/docs/presentations/revealjs/themes.html
 
-body {
-  font-size: 8px; // ou qualquer tamanho desejado, ex: 12px, 0.9em, etc.
+// fontes
+$font-family-sans-serif: "Garamond", "Times New Roman", serif !default;
+
+// cores
+$body-bg: #FFFFFF !default;
+$body-color: #3a4152 !default;
+$link-color: #271E8D !default;
+$selection-bg: #364261 !default;
+
+// títulos
+$presentation-heading-font: "Garamond", "Times New Roman", serif !default;
+$presentation-heading-color: #364261 !default;
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.3em;
 }
 
-h1 {
-  font-size: 1.8rem;
+
+/* Fundo do código-fonte (input) */
+.reveal pre code {
+  background-color: #EDEDED;  // cor clara para código
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+  color:#6484a4; // cor do texto
 }
 
-h2 {
-  font-size: 1.4rem;
+
+
+.titulo-minicurso {
+  position: relative;          /* para posicionar a barra */
+  font-size: 220%;
+  font-weight: bold;
+  font-family: "Garamond", "Times New Roman", serif;
+  margin-top: 100px;
+  color: #FFFFFF;
+  text-align: left;
+  padding-bottom: 10px;        /* espaço para a barra */
 }
 
-p {
-  font-size: 0.9rem;
+.titulo-minicurso::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background-color: #FFFFFF;  /* cor da barra */
+  border-radius: 3px;
+}
+
+.subtitulo-minicurso {
+  text-align: left;
+  margin-top: 5px;
+  font-size: 80%;
+  color: #FFFFFF;
+  font-family: "Garamond", "Times New Roman", serif;
+}
+
+.info-direita {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* margem mais próxima da borda direita */
+  text-align: right;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #FFFFFF;
+  font-family: "Garamond", "Times New Roman", serif;
+  z-index: 1000;
+  max-width: 400px;  /* Aumenta a largura para não cortar */
+  word-wrap: break-word; /* Garante quebra de linha em palavras longas */
+  white-space: normal;   /* Garante quebras de linha funcionem */
+}
+
+.local-data {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 45%;
+  color: #FFFFFF;
+  font-family: "Garamond", "Times New Roman", serif;
 }

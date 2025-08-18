@@ -1,9 +1,10 @@
 ---
-title: "Teste de Page para k-amostras relacionadas"
-author: "Vitória Sesana"
+# title: "Teste de Page para k-amostras relacionadas"
+# author: "Vitória Sesana"
 format: 
   revealjs:
     # incremental: true 
+    theme: theme.scss
     width: 1280  
     height: 720  
 editor: visual
@@ -28,6 +29,37 @@ base <- read.csv2(caminho) %>%
 n_respostas <- nrow(base)
 
 ```
+
+
+<!-- ##  {.title background-color="#364261"} -->
+<br>
+<br>
+
+::: {.info-direita}
+Universidade Federal do Espírito Santo<br>
+Centro de Ciências Exatas<br>
+Curso de Estatística Aplicada
+:::
+
+
+::: {.titulo-minicurso}
+Teste de Page para k-amostras relacionadas
+:::
+
+::: {.subtitulo-minicurso}
+Discente: Vitória N. de Jesus Sesana 
+:::
+
+::: {.subtitulo-minicurso}
+Doscente: Dr. Adelmo Inacio Bertolde
+:::
+ <br>
+ 
+::: {.local-data}
+Vitória - ES <br>
+2025
+:::
+
 
 ## Sumário
 
