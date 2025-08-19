@@ -390,9 +390,8 @@
     <div class="slides">
 
 
-<section class="slide level2">
-
-<!-- ##  {.title background-color="#364261"} -->
+<section id="section" class="slide level2 title" data-background-color="#364261">
+<h2></h2>
 <p><br> <br></p>
 <div class="info-direita">
 <p>Universidade Federal do Espírito Santo<br> Centro de Ciências Exatas<br> Curso de Estatística Aplicada</p>
@@ -452,16 +451,21 @@
 <h1>Metodologia</h1>
 
 </section>
+<section id="passo-a-passo-2" class="slide level2">
+<h2>Passo a passo <sup>1</sup></h2>
+<p>Passo a passo para a aplicação do teste:</p>
+<ol type="1">
+<li>Obter a matriz de dados (blocos × grupo);</li>
+<li>Rankear os dados dentro de cada linha;</li>
+<li>Definir pesos conforme a ordem esperada;</li>
+<li>Determinar o nível de confiança;</li>
+<li>Calcular a estatística do teste;</li>
+<li>Comparar com valor crítico ou usar aproximação normal para obter p-valor.</li>
+</ol>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Código doi: 10.1080/01621459.1963.10500843</p></li></ol></aside></section>
 <section id="dados" class="slide level2">
 <h2>Dados</h2>
 <table class="caption-top">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 14%">
-<col style="width: 26%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Bloco</th>
@@ -513,18 +517,6 @@
 <p>Matriz com b blocos (linhas) e k tratamentos (colunas).</p>
 </blockquote>
 </section>
-<section id="passo-a-passo" class="slide level2">
-<h2>Passo a passo <sup>1</sup></h2>
-<p>Passo a passo para a aplicação do teste:</p>
-<ol type="1">
-<li>Obter a matriz de dados (blocos × grupo);</li>
-<li>Rankear os dados dentro de cada linha;</li>
-<li>Definir pesos conforme a ordem esperada;</li>
-<li>Determinar o nível de confiança;</li>
-<li>Calcular a estatística do teste;</li>
-<li>Comparar com valor crítico ou usar aproximação normal para obter p-valor.</li>
-</ol>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>Código doi: 10.1080/01621459.1963.10500843</p></li></ol></aside></section>
 <section id="hipóteses" class="slide level2">
 <h2>Hipóteses</h2>
 <p><span class="math display">\[
@@ -550,7 +542,7 @@ H_1: T_{1} &lt; \dots &lt; T_{k}
 <li><p><span class="math inline">\(w_{j}\)</span> = peso esperado do tratamento j;</p></li>
 <li><p><span class="math inline">\(R_{j}\)</span> = soma dos ranks do tratamento.<sup>1</sup></p></li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn3"><p><span class="math inline">\(R_{j} =  \sum{}_{i=1}^{b}X_{ij}\)</span> com <span class="math inline">\(i = {1,\dots,b}\)</span> e <span class="math inline">\(j = {1,\dots,k}\)</span> </p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn3"><p><span class="math inline">\(R_{j} =  \sum{}_{i=1}^{b}X_{ij}\)</span> com <span class="math inline">\(i = {1,\dots,b}\)</span> e <span class="math inline">\(j = {1,\dots,k}\)</span></p></li></ol></aside></section>
 <section id="decisão" class="slide level2">
 <h2>Decisão</h2>
 <p>Você compara o valor de L com valores críticos em uma tabela de Page (existe para pequenos valores de n e k), ou para maiores valores usa-se a aproximação normal:</p>
@@ -571,7 +563,7 @@ Z = \frac{L - \mu_L}{\sigma_L}
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(DescTools)</span>
 <span id="cb1-2"><a href=""></a><span class="fu">PageTest</span>(dados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Executa o Teste de Page para alternativas ordenadas usando um algoritmo exato proposto por Stefan Wellek (1989) com dados em blocos não replicáveis</p>
+<p>Executa o Teste de Page para alternativas ordenadas usando um algoritmo exato proposto por Stefan Wellek (1989) com dados em blocos não replicáveis.</p>
 </section>
 <section id="função-pagetest" class="slide level2">
 <h2>Função PageTest()</h2>
@@ -681,7 +673,7 @@ H_1: \text{Carne moída} &lt;  \text{Cozido misto} &lt;  \text{Frango grelhado} 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="PAGE-TEST-SLIDES_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" style="width:90.0%;height:100.0%"></p>
+<p><img data-src="PAGE-TEST-SLIDES_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%;height:70.0%"></p>
 </figure>
 </div>
 </div>
@@ -727,9 +719,24 @@ L = 1325, p-value = 0.8235</code></pre>
 </div>
 </div>
 </section>
-<section id="cenário-2" class="slide level2">
-<h2>Cenário 2</h2>
+<section id="ª-aplicação" class="slide level2">
+<h2>2ª Aplicação</h2>
 <p>Apenas indivíduos que vão frequentemente ao RU (6 a 10 vezes por semana).</p>
+<ul>
+<li>Percentual dos ranqueamentos por opção de prato principal:</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="PAGE-TEST-SLIDES_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center" style="width:60.0%;height:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ª-aplicação-1" class="slide level2">
+<h2>2ª Aplicação</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>rankings_2 <span class="ot">&lt;-</span> </span>
 <span id="cb6-2"><a href=""></a>  base <span class="sc">%&gt;%</span> </span>
@@ -743,9 +750,13 @@ L = 1325, p-value = 0.8235</code></pre>
 <span id="cb6-10"><a href=""></a>    peixe_desfiado,</span>
 <span id="cb6-11"><a href=""></a>    nuggets,</span>
 <span id="cb6-12"><a href=""></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-13"><a href=""></a>  <span class="fu">as.matrix</span>()</span>
-<span id="cb6-14"><a href=""></a></span>
-<span id="cb6-15"><a href=""></a><span class="fu">PageTest</span>(rankings_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-13"><a href=""></a>  <span class="fu">as.matrix</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="ª-aplicação---resultado" class="slide level2">
+<h2>2ª Aplicação - Resultado</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">PageTest</span>(rankings_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Page test for ordered alternatives
@@ -760,7 +771,7 @@ L = 479, p-value = 0.8384</code></pre>
 <p>Page, E. (1963): Ordered hypotheses for multiple treatments: A significance test for linear ranks. Journal of the American Statistical Association, 58, 216-230.</p>
 <p>Siegel, S. &amp; Castellan, N. J. Jr.&nbsp;(1988): Nonparametric statistics for the behavioral sciences. Boston, MA: McGraw-Hill.</p>
 <p>Wellek, S. (1989): Computing exact p-values in Page’s nonparametric test against trend. Biometrie und Informatik in Medizin und Biologie 20, 163-170</p>
-<p><a href="https://cran.r-project.org/web/packages/DescTools/DescTools.pdf">https://cran.r-project.org/web/packages/DescTools/DescTools.pdf</a></p>
+<p><a href="https://cran.r-project.org/web/packages/DescTools/DescTools.pdf" class="uri">https://cran.r-project.org/web/packages/DescTools/DescTools.pdf</a></p>
 </section></section>
 <section id="agradeço-pela-atenção" class="title-slide slide level1 center">
 <h1>Agradeço pela atenção!</h1>

@@ -30,53 +30,47 @@ n_respostas <- nrow(base)
 
 ```
 
+##  {.title background-color="#364261"} 
 
-<!-- ##  {.title background-color="#364261"} -->
-<br>
-<br>
+<br> <br>
 
-::: {.info-direita}
-Universidade Federal do Espírito Santo<br>
-Centro de Ciências Exatas<br>
-Curso de Estatística Aplicada
+::: info-direita
+Universidade Federal do Espírito Santo<br> Centro de Ciências Exatas<br> Curso de Estatística Aplicada
 :::
 
-
-::: {.titulo-minicurso}
+::: titulo-minicurso
 Teste de Page para k-amostras relacionadas
 :::
 
-::: {.subtitulo-minicurso}
-Discente: Vitória N. de Jesus Sesana 
+::: subtitulo-minicurso
+Discente: Vitória N. de Jesus Sesana
 :::
 
-::: {.subtitulo-minicurso}
+::: subtitulo-minicurso
 Doscente: Dr. Adelmo Inacio Bertolde
 :::
- <br>
- 
-::: {.local-data}
-Vitória - ES <br>
-2025
-:::
 
+<br>
+
+::: local-data
+Vitória - ES <br> 2025
+:::
 
 ## Sumário
 
-
-1. Sobre o teste
-2. Metodologia do teste
-3. Aplicação prática com dados reais
-
+1.  Sobre o teste
+2.  Metodologia do teste
+3.  Aplicação prática com dados reais
 
 # Sobre o teste de page
 
 ## História
 
-A história do **Teste de Page** tem origem no contexto dos testes não paramétricos desenvolvidos no século XX, e está associada ao psicológo e estatístico americano [Ellis Batten Page]{.underline}, que propôs o teste em 1963^[Page, E. B. (1963). "Ordered hypotheses for multiple treatments: a significance test for linear ranks." Journal of the American Statistical Association, 58(301), 216–230.].
+A história do **Teste de Page** tem origem no contexto dos testes não paramétricos desenvolvidos no século XX, e está associada ao psicológo e estatístico americano [Ellis Batten Page]{.underline}, que propôs o teste em 1963[^1].
+
+[^1]: Page, E. B. (1963). "Ordered hypotheses for multiple treatments: a significance test for linear ranks." Journal of the American Statistical Association, 58(301), 216–230.
 
 Elliot Page estava interessado em métodos eficientes para analisar dados classificados (rankings), especialmente quando havia uma hipótese de **ordem específica entre tratamentos**.
-
 
 ## Page x Friedman
 
@@ -91,36 +85,38 @@ $$
 
 ## Quando usar?
 
-- Dados pareados ou em blocos.
+-   Dados pareados ou em blocos.
 
-- As medições podem ser ordenadas (ordinais).
+-   As medições podem ser ordenadas (ordinais).
 
-- Quer verificar se existe uma tendência de ordenação entre os tratamentos.
+-   Quer verificar se existe uma tendência de ordenação entre os tratamentos.
 
 # Metodologia
 
-## Dados
+## Passo a passo [^2]
 
-| Bloco   | Tratamento 1   | Tratamento 2   | $\cdots$ | Tratamento $k$   |
-|---------|----------------|----------------|----------|------------------|
-| Bloco 1 | $X_{1,1}$       | $X_{1,2}$       | $\cdots$ | $X_{1,k}$         |
-| Bloco 2 | $X_{2,1}$       | $X_{2,2}$       | $\cdots$ | $X_{2,k}$         |
-| Bloco 3 | $X_{3,1}$       | $X_{3,2}$       | $\cdots$ | $X_{3,k}$         |
-| $\vdots$ | $\vdots$       | $\vdots$       | $\ddots$ | $\vdots$         |
-| Bloco $b$ | $X_{b,1}$     | $X_{b,2}$       | $\cdots$ | $X_{b,k}$         |
-
-> Matriz com b blocos (linhas) e k tratamentos (colunas).
-
-## Passo a passo ^[Código doi: 10.1080/01621459.1963.10500843] 
+[^2]: Código doi: 10.1080/01621459.1963.10500843
 
 Passo a passo para a aplicação do teste:
 
-1. Obter a matriz de dados (blocos × grupo);
-2. Rankear os dados dentro de cada linha;
-3. Definir pesos conforme a ordem esperada;
-2. Determinar o nível de confiança; 
-4. Calcular a estatística do teste;
-3. Comparar com valor crítico ou usar aproximação normal para obter p-valor.
+1.  Obter a matriz de dados (blocos × grupo);
+2.  Rankear os dados dentro de cada linha;
+3.  Definir pesos conforme a ordem esperada;
+4.  Determinar o nível de confiança;
+5.  Calcular a estatística do teste;
+6.  Comparar com valor crítico ou usar aproximação normal para obter p-valor.
+
+## Dados
+
+| Bloco     | Tratamento 1 | Tratamento 2 | $\cdots$ | Tratamento $k$ |
+|-----------|--------------|--------------|----------|----------------|
+| Bloco 1   | $X_{1,1}$    | $X_{1,2}$    | $\cdots$ | $X_{1,k}$      |
+| Bloco 2   | $X_{2,1}$    | $X_{2,2}$    | $\cdots$ | $X_{2,k}$      |
+| Bloco 3   | $X_{3,1}$    | $X_{3,2}$    | $\cdots$ | $X_{3,k}$      |
+| $\vdots$  | $\vdots$     | $\vdots$     | $\ddots$ | $\vdots$       |
+| Bloco $b$ | $X_{b,1}$    | $X_{b,2}$    | $\cdots$ | $X_{b,k}$      |
+
+> Matriz com b blocos (linhas) e k tratamentos (colunas).
 
 
 ## Hipóteses
@@ -149,10 +145,11 @@ $$
 
 $$ L = \sum{}_{j=1}^{k}w_{j}R_{j}$$
 
-- $w_{j}$ = peso esperado do tratamento j;
+-   $w_{j}$ = peso esperado do tratamento j;
 
-- $R_{j}$ = soma dos ranks do tratamento.^[$R_{j} =  \sum{}_{i=1}^{b}X_{ij}$ com $i = {1,\dots,b}$ e $j = {1,\dots,k}$ ]
+-   $R_{j}$ = soma dos ranks do tratamento.[^3]
 
+[^3]: $R_{j} =  \sum{}_{i=1}^{b}X_{ij}$ com $i = {1,\dots,b}$ e $j = {1,\dots,k}$
 
 ## Decisão
 
@@ -170,8 +167,7 @@ $$
 Z = \frac{L - \mu_L}{\sigma_L}
 $$
 
-
-## Aplicação no R 
+## Aplicação no R
 
 No pacote [DescTools](https://cran.r-project.org/web/packages/DescTools/DescTools.pdf), há a seguinte função para executar o teste de page:
 
@@ -180,17 +176,17 @@ library(DescTools)
 PageTest(dados)
 ```
 
-Executa o Teste de Page para alternativas ordenadas usando um algoritmo exato proposto por Stefan Wellek (1989) com dados em blocos não replicáveis
+Executa o Teste de Page para alternativas ordenadas usando um algoritmo exato proposto por Stefan Wellek (1989) com dados em blocos não replicáveis.
 
 ## Função PageTest()
 
-- A alternativa implementada é que o parâmetro de localização será crescente ao longo dos grupos. Se a direção oposta for necessária, a ordem dos grupos deve ser invertida dentro da matriz.
+-   A alternativa implementada é que o parâmetro de localização será crescente ao longo dos grupos. Se a direção oposta for necessária, a ordem dos grupos deve ser invertida dentro da matriz.
 
-- Os grupos e blocos são obtidos a partir dos índices das colunas e das linhas, respectivamente. 
+-   Os grupos e blocos são obtidos a partir dos índices das colunas e das linhas, respectivamente.
 
-- Valores NA não são permitidos nos grupos ou blocos; se y contiver NA, os blocos correspondentes serão removidos.
+-   Valores NA não são permitidos nos grupos ou blocos; se y contiver NA, os blocos correspondentes serão removidos.
 
-- Para valores pequenos de k (métodos) ou N (objetos de dados), o PageTest calculará os valores-p exatos. Para k, N > 15, Inf, é retornada uma aproximação normal. Apenas um desses valores será retornado.
+-   Para valores pequenos de k (métodos) ou N (objetos de dados), o PageTest calculará os valores-p exatos. Para k, N \> 15, Inf, é retornada uma aproximação normal. Apenas um desses valores será retornado.
 
 # Aplicação
 
@@ -207,21 +203,20 @@ $$ \text{Carne moída} <  \text{Cozido misto} <  \text{Frango grelhado} \\
 
 ## Questionário
 
-1. Você se considera vegano/vegetariano?
-   + Sim/Não
-2. Quantas vezes por seman, em média, você frequenta o RU?
-   + Nenhuma vez por semana;
-   + Raramente (1 vez por semana);
-   + Regularmente (2 a 5 vezes por semana);
-   + Frequentemente (6 a 10 vezes).
-3. Ranqueamento das opções de prato principal.
+1.  Você se considera vegano/vegetariano?
+    -   Sim/Não
+2.  Quantas vezes por seman, em média, você frequenta o RU?
+    -   Nenhuma vez por semana;
+    -   Raramente (1 vez por semana);
+    -   Regularmente (2 a 5 vezes por semana);
+    -   Frequentemente (6 a 10 vezes).
+3.  Ranqueamento das opções de prato principal.
 
-## Ranqueamento 
+## Ranqueamento
 
 ```{r, echo=FALSE, out.width='50%', fig.align='center'}
 knitr::include_graphics("imagens/questionario.png")
 ```
-
 
 ## Hipóteses
 
@@ -235,52 +230,58 @@ Com os pesos sendo:
 
 $$w = \{1,2,3,4,5\}$$
 
-E o nível de signficância adotado: 
+E o nível de signficância adotado:
 
 $$\alpha = 5\%$$
 
-
 ## Análise exploratória dos dados
 
-- Quantidade total de estudantes: `r n_respostas`
+-   Quantidade total de estudantes: `r n_respostas`
 
-- Quantidade de vegetarianos/veganos:
+-   Quantidade de vegetarianos/veganos:
 
 | Vegetariano/Vegano | Quantidade |
-|---------|---------------------------|
-| Sim     | 0  |
-| Não     | 30 |
-| Total     | 30 |
+|--------------------|------------|
+| Sim                | 0          |
+| Não                | 30         |
+| Total              | 30         |
 
 ## Análise exploratória dos dados
 
-- Gráfico de barras das frequências semanais de idas ao RU:
+-   Gráfico de barras das frequências semanais de idas ao RU:
 
 ```{r, echo=FALSE, out.width='75%', out.height='50%', fig.align='center'}
-ggplot(base, aes(x = frequencia_ru)) +
-  geom_bar(fill = "#2B4B8F", width = 0.75) +                
-  geom_text(stat = "count", aes(label = ..count..), vjust = -0.5) +  
+dados_plot <- base %>%
+  count(frequencia_ru) %>%
+  mutate(
+    percentual = n / sum(n) * 100,
+    label = paste0(n, " (", round(percentual, 1), "%)")
+  )
+
+
+ggplot(dados_plot, aes(x = frequencia_ru, y = n)) +
+  geom_bar(stat = "identity", fill = "#364261", width = 0.75) +                
+  geom_text(aes(label = label), colour = "#364261",vjust = -0.5) +  
   labs(title = "",
        x = "",
        y = "Frequência das respostas") +
   scale_y_continuous(
-    limits = c(0, max(table(base$frequencia_ru))),
-    breaks = seq(0, max(table(base$frequencia_ru)), by = 2) 
-    ) +
+    limits = c(0, max(dados_plot$n) * 1.1),
+    breaks = seq(0, max(dados_plot$n), by = 2)
+  ) +
   theme_minimal() + 
   theme( 
     panel.grid.major.x = element_blank(),
     panel.grid.minor.y = element_line(colour = "#C4C4C4"),
-    panel.grid.major.y = element_line(colour = "#696969")
-  )
- 
+    panel.grid.major.y = element_line(colour = "#C4C4C4")
+  ) 
 ```
 
 ## Análise exploratória dos dados
 
-- Percentual dos ranqueamentos por opção de prato principal:
+-   Percentual dos ranqueamentos por opção de prato principal:
 
-```{r, echo=FALSE, out.width='90%', out.height='100%', fig.align='center'}
+```{r, echo=FALSE, out.width='70%', out.height='70%', fig.align='center'}
 # Selecionar colunas dos alimentos
 dados <- base %>%
   select(
@@ -351,6 +352,7 @@ ggplot(porcentagens_long, aes(x = factor(
     axis.text.x = element_text(angle = 45, hjust = 1), panel.grid.major.x = element_blank(), panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank()
     ) +
   ggtitle("")
+
 ```
 
 ## Aplicação do teste de page
@@ -369,6 +371,7 @@ rankings <-
 
 head(rankings)
 ```
+
 ## Aplicação do teste de page
 
 ```{r, echo=TRUE}
@@ -376,10 +379,87 @@ library(DescTools)
 PageTest(rankings)
 ```
 
-## Cenário 2
+## 2ª Aplicação 
 
 Apenas indivíduos que vão frequentemente ao RU (6 a 10 vezes por semana).
 
+-   Percentual dos ranqueamentos por opção de prato principal:
+
+```{r, echo=FALSE, out.width='60%', out.height='60%', fig.align='center'}
+# Selecionar colunas dos alimentos
+dados <- base %>% 
+  filter( frequencia_ru %in% c("Frequentemente")) %>% 
+  select(
+    carne_moida,
+    cozido_misto,
+    frango_grelhado,
+    peixe_desfiado,
+    nuggets
+  )
+
+# Função para calcular a porcentagem de cada classe
+calcular_porcentagem <- function(coluna) {
+  prop.table(table(coluna)) * 100
+}
+
+# Aplicando a função a cada coluna
+porcentagens_categorias <- lapply(dados, calcular_porcentagem)
+
+# Transformando os resultados em um data.frame para o ggplot
+porcentagens_long <- data.frame(
+  Classe = character(),
+  Alimento = character(),
+  Porcentagem = numeric()
+)
+
+# Organizando os dados
+for (alimento in names(porcentagens_categorias)) {
+  porcentagens <- porcentagens_categorias[[alimento]]
+  for (classe in names(porcentagens)) {
+    porcentagens_long <- rbind(porcentagens_long, data.frame(
+      Classe = factor(classe, levels = c("1", "2", "3", "4", "5")),  # Ordem correta: 1 na base, 5 no topo
+      Alimento = alimento,
+      Porcentagem = porcentagens[classe]
+    ))
+  }
+}
+
+porcentagens_long <- 
+  porcentagens_long %>% 
+  mutate(
+    Alimento = case_when(
+      Alimento == "carne_moida" ~ "Carne moída",
+      Alimento == "cozido_misto" ~ "Cozido misto",
+      Alimento == "frango_grelhado" ~ "Frango grelhado",
+      Alimento == "peixe_desfiado" ~ "Peixe desfiado",
+      Alimento == "nuggets" ~ "Nuggets",
+      
+    )
+  )
+# Plotando o gráfico
+ggplot(porcentagens_long, aes(x = factor(
+  Alimento, 
+        levels = c("Carne moída",
+"Cozido misto",
+"Frango grelhado",
+"Peixe desfiado",
+"Nuggets")
+      
+), y = Porcentagem, fill = Classe)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(x = "", y = "Porcentagem (%)", fill = "Preferência") +
+  scale_fill_manual(
+    values = c("1" = "#F44336", "2" = "#FF9800", "3" = "#FFEB3B", "4" = "#4CAF50", "5" = "#2196F3"),
+    labels = c("Preferência 1", "Preferência 2", "Preferência 3", "Preferência 4", "Preferência 5")
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1), panel.grid.major.x = element_blank(), panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank()
+    ) +
+  ggtitle("")
+```
+
+## 2ª Aplicação 
 
 ```{r, echo=TRUE}
 rankings_2 <- 
@@ -395,10 +475,13 @@ rankings_2 <-
     nuggets,
   ) %>% 
   as.matrix()
-
-PageTest(rankings_2)
 ```
 
+## 2ª Aplicação - Resultado
+
+```{r, echo=TRUE}
+PageTest(rankings_2)
+```
 
 ## Referências
 
@@ -408,9 +491,6 @@ Siegel, S. & Castellan, N. J. Jr. (1988): Nonparametric statistics for the behav
 
 Wellek, S. (1989): Computing exact p-values in Page's nonparametric test against trend. Biometrie und Informatik in Medizin und Biologie 20, 163-170
 
-
-[https://cran.r-project.org/web/packages/DescTools/DescTools.pdf](https://cran.r-project.org/web/packages/DescTools/DescTools.pdf)
-
-
+<https://cran.r-project.org/web/packages/DescTools/DescTools.pdf>
 
 # Agradeço pela atenção!
